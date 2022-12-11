@@ -1,4 +1,5 @@
 import html from "html-literal";
 
-// export default () => html`
-//   <section id="affirmation"></section>
+export default () => html`
+  <section id="affirmation"></section>
+`;
