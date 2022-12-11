@@ -1,4 +1,4 @@
-import { Header, Nav, Main, Footer } from "./components"; //ALL imports statements go at the top
+import { Header, Nav, Main, Footer } from "./components";
 import * as store from "./store";
 import Navigo from "navigo";
 import { capitalize } from "lodash";
@@ -55,20 +55,6 @@ router.hooks({
             done();
           })
           .catch(err => console.log(err));
-        break;
-      case "Pizza":
-        // New Axios get request utilizing already made environment variable
-        axios
-          .get(`${process.env.PIZZA_PLACE_API_URL}/pizzas`)
-          .then(response => {
-            console.log(response.data); // Storing retrieved data in state
-            store.Pizza.pizzas = response.data;
-            done();
-          })
-          .catch(error => {
-            console.log("It puked", error);
-            done();
-          });
         break;
       default:
         done();
