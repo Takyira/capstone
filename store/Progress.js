@@ -1,4 +1,4 @@
 export default {
-  header: "My Progress Page",
+  header: "My Progress",
   view: "Progress"
 };
