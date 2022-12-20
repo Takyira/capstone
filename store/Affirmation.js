@@ -1,4 +1,4 @@
 export default {
-  header: "My Affirmation Page",
+  header: "Daily Affirmation",
   view: "Affirmation"
 };
