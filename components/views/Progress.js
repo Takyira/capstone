@@ -1,8 +1,39 @@
 import html from "html-literal";
 
 export default () => html`
-  <section id="progress">
+  <!-- <section id="progress">
     <h2>One step at a time!</h2>
     <canvas id="habChart" style="width:100%;max-width:700px"></canvas>
+    <script>
+      myChart("habChart", {
+        type: "bubble",
+        data: {},
+        options: {
+          legend: { display: false },
+          scales: {}
+        }
+      });
+    </script>
+  </section> -->
+
+  <section id="new-habit">
+    <form id="new-habit" method="POST" action="">
+      <h2>Create or Destroy?</h2>
+      <div>
+        <label for="habit">Habit</label>
+        <input type="text" name="habit" id="habit" placeholder="" required />
+      </div>
+      <div>
+        <label for="action">Action</label>
+        <select id="action" name="action">
+          <option value="action">Select an Action</option>
+          <option value="establish">Establish</option>
+          <option value="demolish">Demolish</option>
+          <option value="progress">In progress</option>
+        </select>
+      </div>
+      <input type="submit" name="submit" value="Submit" />
+    </form>
   </section>
+  >
 `;

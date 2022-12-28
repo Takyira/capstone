@@ -1,4 +1,5 @@
 export default {
   header: "Daily Affirmation",
-  view: "Affirmation"
+  view: "Affirmation",
+  gif: []
 };
