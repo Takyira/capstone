@@ -17,7 +17,7 @@ ${Nav(store.Links)}
 ${Main(state)}
 ${Footer()}
 `;
-  afterRender();
+  afterRender(state);
   router.updatePageLinks();
 }
 function afterRender() {
@@ -25,6 +25,27 @@ function afterRender() {
   document.querySelector(".fa-bars").addEventListener("click", () => {
     document.querySelector("nav > ul").classList.toggle("hidden--mobile");
   });
+  // if (state.view === "Habit") {
+  //   document.querySelector("form").addEventListener("submit", event => {
+  //     event.preventDefault();
+
+  //     const inputList = event.target.elements;
+  //     console.log("Input Element List", inputList);
+  //   }
+  //     const requestData = {
+  //       habit: inputList.habit.value,
+  //       action: inputList.action.value};
+  //       console.log("request Body", requestData);
+
+  //       axios
+  //       .post(`${process.env.HABIT_TRACKER_API_URL}/habits`, requestData)
+  //       .then(response => {
+  //         store.Habit.habits.push(response.data);
+  //         router.navigate("/Habit");
+  //       })
+  //       .catch(error => {
+  //         console.log("TERRIBLE DANGER", error);
+  //       })
 }
 
 router.hooks({
@@ -66,6 +87,11 @@ router.hooks({
           .then(response => {
             store.Affirmation.gif = response.data;
             console.log(store.Affirmation.gif.data.url);
+            done();
+          })
+          .catch(error => {
+            console.log(error);
+            done();
           });
         break;
       default:
