@@ -4,6 +4,7 @@ import Navigo from "navigo";
 import { capitalize } from "lodash";
 import axios from "axios";
 import dotenv from "dotenv";
+// import { Console } from "console";
 
 dotenv.config();
 
@@ -55,6 +56,17 @@ router.hooks({
             done();
           })
           .catch(err => console.log(err));
+        break;
+      case "Affirmation":
+        axios
+          .get(
+            // Replace the key provided here with your own key
+            `https://api.giphy.com/v1/gifs/random?api_key=${process.env.GIPHY}&tag=encourage&rating=pg-13`
+          )
+          .then(response => {
+            store.Affirmation.gif = response.data;
+            console.log(store.Affirmation.gif.data.url);
+          });
         break;
       default:
         done();

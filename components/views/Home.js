@@ -1,10 +1,8 @@
 import html from "html-literal";
-import starrysky from "/assets/img/starrysky.jpg";
 
 export default state =>
   html`
     <section id="quote">
-      <!-- <img src="${starrysky}" /> -->
       <h2>
         "The secret of your future is hidden in your daily routine" -Mike
         Murdock
