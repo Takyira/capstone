@@ -78,6 +78,22 @@ router.hooks({
           })
           .catch(err => console.log(err));
         break;
+      // New Case for HABIT View
+      case "Habit":
+        // New Axios get request utilizing already made environment variable
+        axios
+          .get(`${process.env.HABIT_TRACKER_API_URL}/habits`)
+          .then(response => {
+            // Storing retrieved data in state
+            console.log(response.data);
+            store.Habit.habits = response.data;
+            done();
+          })
+          .catch(error => {
+            console.log("Error", error);
+            done();
+          });
+        break;
       case "Affirmation":
         axios
           .get(
