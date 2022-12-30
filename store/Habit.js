@@ -1,4 +1,5 @@
 export default {
   header: "Habits",
-  view: "Habit"
+  view: "Habit",
+  habits: []
 };
