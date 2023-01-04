@@ -50,6 +50,26 @@ footer {
   margin: 1rem 1rem;
 }
 
+#habits {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 1.2em;
+  height: auto;
+  width: 92.5%;
+  margin: auto;
+}
+
+#habits tbody {
+  width: 100%;
+}
+
+#habits th {
+  text-align: left;
+}
+
+#habits td,th {
+  width: 25%;
+}
+
 @media (max-width: 549px){
   .hidden--mobile {
     display: none !important;
@@ -61,16 +81,16 @@ footer {
     flex-direction: column;
   }
 
-  nav > i {
+  /* nav > i {
     padding: 1rem;
     font-size: 2em;
-  }
+  } */
 
-  nav > ul {
+  /* nav > ul {
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 0 0;
+    padding: 0 0; */
 
   }
 

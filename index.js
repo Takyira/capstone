@@ -20,32 +20,43 @@ ${Footer()}
   afterRender(state);
   router.updatePageLinks();
 }
-function afterRender() {
+function afterRender(state) {
   // add menu toggle to bars icon in nav bar
   document.querySelector(".fa-bars").addEventListener("click", () => {
     document.querySelector("nav > ul").classList.toggle("hidden--mobile");
   });
-  // if (state.view === "Habit") {
-  //   document.querySelector("form").addEventListener("submit", event => {
-  //     event.preventDefault();
 
-  //     const inputList = event.target.elements;
-  //     console.log("Input Element List", inputList);
-  //   }
-  //     const requestData = {
-  //       habit: inputList.habit.value,
-  //       action: inputList.action.value};
-  //       console.log("request Body", requestData);
+  if (state.view === "Home") {
+    document.getElementById("dummyButton").addEventListener("click", () => {
+      router.navigate("/Habit");
+    });
+  }
 
-  //       axios
-  //       .post(`${process.env.HABIT_TRACKER_API_URL}/habits`, requestData)
-  //       .then(response => {
-  //         store.Habit.habits.push(response.data);
-  //         router.navigate("/Habit");
-  //       })
-  //       .catch(error => {
-  //         console.log("TERRIBLE DANGER", error);
-  //       })
+  if (state.view === "Habit") {
+    document.querySelector("form").addEventListener("submit", event => {
+      event.preventDefault();
+
+      const inputList = event.target.elements;
+      console.log("Input Element List", inputList);
+
+      const requestData = {
+        habit: inputList.habit.value,
+        action: inputList.action.value
+      };
+      console.log("request Body", requestData);
+
+      axios
+        .post(`${process.env.HABIT_TRACKER_API_URL}/habits`, requestData)
+        .then(response => {
+          //push created habits to Habit state habits to display
+          store.Habit.habits.push(response.data);
+          router.navigate("/Habit");
+        })
+        .catch(error => {
+          console.log("TERRIBLE DANGER", error);
+        });
+    });
+  }
 }
 
 router.hooks({
@@ -79,14 +90,14 @@ router.hooks({
           .catch(err => console.log(err));
         break;
       // New Case for HABIT View
-      case "Habit":
+      case "Progress":
         // New Axios get request utilizing already made environment variable
         axios
           .get(`${process.env.HABIT_TRACKER_API_URL}/habits`)
           .then(response => {
             // Storing retrieved data in state
             console.log(response.data);
-            store.Habit.habits = response.data;
+            store.Progress.habits = response.data;
             done();
           })
           .catch(error => {

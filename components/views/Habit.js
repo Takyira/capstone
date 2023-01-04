@@ -1,21 +1,6 @@
 import html from "html-literal";
 
 export default () => html`
-  <!-- <section id="progress">
-    <h2>One step at a time!</h2>
-    <canvas id="habChart" style="width:100%;max-width:700px"></canvas>
-    <script>
-      myChart("habChart", {
-        type: "bubble",
-        data: {},
-        options: {
-          legend: { display: false },
-          scales: {}
-        }
-      });
-    </script>
-  </section> -->
-
   <section id="new-habit">
     <form id="new-habit" method="POST" action="">
       <h2>Create or Destroy?</h2>
@@ -35,5 +20,4 @@ export default () => html`
       <input type="submit" name="submit" value="Submit" />
     </form>
   </section>
-  >
 `;
