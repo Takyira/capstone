@@ -25,7 +25,9 @@ export default state =>
           placeholder="Password"
         />
       </div>
-      <a href="Progress.js">Login</a>
+      <button id="dummyButton" href="http://localhost:4040/Habit.js">
+        Login
+      </button>
     </section>
 
     <h3>
