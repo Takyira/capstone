@@ -17,6 +17,10 @@ export default () => html`
           <option value="progress">In progress</option>
         </select>
       </div>
+      <div>
+        <label for="start">Start Date:</label>
+        <input type="date" id="start" name="start" value="" />
+      </div>
       <input type="submit" name="submit" value="Submit" />
     </form>
   </section>

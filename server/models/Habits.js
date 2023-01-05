@@ -10,6 +10,10 @@ const habitSchema = new mongoose.Schema({
     type: String,
     required: true,
     enum: ["establish", "demolish", "in-progress"]
+  },
+  start: {
+    type: String,
+    required: true
   }
 });
 

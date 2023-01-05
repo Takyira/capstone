@@ -41,7 +41,8 @@ function afterRender(state) {
 
       const requestData = {
         habit: inputList.habit.value,
-        action: inputList.action.value
+        action: inputList.action.value,
+        start: inputList.start.value
       };
       console.log("request Body", requestData);
 
@@ -120,6 +121,21 @@ router.hooks({
             console.log(error);
             done();
           });
+
+        // axios
+        //   .get(
+        //     // Replace the key provided here with your own key
+        //     `https://favqs.com/api=${process.env.FAVQ}/qotd`
+        //   )
+        //   .then(response => {
+        //     store.Affirmation.affirmation = response.data;
+        //     console.log(store.Affirmation.affirmation.data.url);
+        //     done();
+        //   })
+        //   .catch(error => {
+        //     console.log(error);
+        //     done();
+        //   });
         break;
       default:
         done();
