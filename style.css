@@ -70,7 +70,7 @@ footer {
   width: 25%;
 }
 
-@media (max-width: 549px){
+@media (max-width: 549px) {
   .hidden--mobile {
     display: none !important;
   }
@@ -117,3 +117,11 @@ footer {
       display: none;
     }
 
+/* #affirmation {
+  display: flex;
+}
+
+.giphy-container {
+display: inline-block;
+width: 120px;
+} */
