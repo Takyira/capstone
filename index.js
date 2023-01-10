@@ -5,8 +5,6 @@ import { capitalize } from "lodash";
 import axios from "axios";
 import dotenv from "dotenv";
 
-// import { Console } from "console";
-
 dotenv.config();
 
 const router = new Navigo("/");
@@ -46,19 +44,6 @@ function afterRender(state) {
         start: inputList.start.value
       };
       console.log("request Body", requestData);
-
-      if (state.view === "Affirmation") {
-        let fig = document.createElement("figure");
-        let img = document.createElement("img");
-        let fc = document.createElement("figcaption");
-        img.src = response.data.images.downsized.url;
-        img.alt = response.data.title;
-        fc.textContent = response.data.title;
-        fig.appendChild(img);
-        fig.appendChild(fc);
-        let out = document.querySelector(".out");
-        out.insertAdjacentElement("afterbegin", fig);
-      }
 
       axios
         .post(`${process.env.HABIT_TRACKER_API_URL}/habits`, requestData)
