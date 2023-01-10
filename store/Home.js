@@ -1,5 +1,5 @@
 export default {
-  header: "",
+  header: "Affirm Habit",
   view: "Home",
   weather: {}
 };
